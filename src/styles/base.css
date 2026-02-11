@@ -4,8 +4,8 @@ body{
   margin:0;
   font-family:var(--font-sans);
   background:
-    radial-gradient(1000px 600px at 20% -10%, rgba(214,177,94,.18), transparent 60%),
-    radial-gradient(900px 600px at 90% 0%, rgba(111,177,255,.14), transparent 55%),
+    radial-gradient(1000px 600px at 20% -10%, rgba(214,177,94,.12), transparent 60%),
+    radial-gradient(900px 600px at 90% 0%, rgba(111,177,255,.10), transparent 55%),
     linear-gradient(180deg, var(--bg), var(--bg-2));
   color:var(--fg);
   line-height:var(--lh);
@@ -21,10 +21,11 @@ button,input,select,textarea{font:inherit;color:inherit;}
   left:10px;
   top:10px;
   transform:translateY(-200%);
-  background:rgba(16,24,38,.95);
+  background:var(--card);
   border:1px solid var(--border);
   padding:10px 12px;
   border-radius:12px;
+  box-shadow:var(--shadow-1);
   z-index:10000;
 }
 .skip:focus{transform:translateY(0);}

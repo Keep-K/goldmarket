@@ -15,14 +15,36 @@ const NAV = [
 
 export function Header() {
   const [compact, setCompact] = React.useState(false)
+  const compactRef = React.useRef(false)
+  const tickingRef = React.useRef(false)
   const [drawerOpen, setDrawerOpen] = React.useState(false)
   const [searchOpen, setSearchOpen] = React.useState(false)
   const [q, setQ] = React.useState('')
   const navigate = useNavigate()
 
   React.useEffect(() => {
-    const onScroll = () => setCompact(window.scrollY > 10)
-    onScroll()
+    const setCompactSafe = (next: boolean) => {
+      if (next === compactRef.current) return
+      compactRef.current = next
+      setCompact(next)
+    }
+
+    const update = () => {
+      const y = window.scrollY || 0
+      const next = compactRef.current ? y > 8 : y > 24
+      setCompactSafe(next)
+    }
+
+    const onScroll = () => {
+      if (tickingRef.current) return
+      tickingRef.current = true
+      window.requestAnimationFrame(() => {
+        tickingRef.current = false
+        update()
+      })
+    }
+
+    update()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])

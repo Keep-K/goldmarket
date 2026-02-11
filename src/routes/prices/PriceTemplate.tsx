@@ -144,7 +144,7 @@ function MiniLineChart({
           </linearGradient>
         </defs>
 
-        <rect x="0" y="0" width={w} height={h} fill="rgba(255,255,255,.02)" rx="14" />
+        <rect x="0" y="0" width={w} height={h} fill="rgba(11,18,32,.03)" rx="14" />
 
         {d ? (
           <>
@@ -158,15 +158,15 @@ function MiniLineChart({
 
         {x !== null && y !== null ? (
           <>
-            <line x1={x} y1={pad} x2={x} y2={h - pad} stroke="rgba(255,255,255,.16)" strokeDasharray="4 6" />
+            <line x1={x} y1={pad} x2={x} y2={h - pad} stroke="rgba(11,18,32,.18)" strokeDasharray="4 6" />
             <circle cx={x} cy={y} r="4" fill="rgba(214,177,94,.95)" />
           </>
         ) : null}
 
-        <text x={pad} y={pad + 10} fill="rgba(255,255,255,.55)" fontSize="12">
+        <text x={pad} y={pad + 10} fill="rgba(11,18,32,.55)" fontSize="12">
           {formatNumber(max)} {currency}
         </text>
-        <text x={pad} y={h - pad} fill="rgba(255,255,255,.55)" fontSize="12">
+        <text x={pad} y={h - pad} fill="rgba(11,18,32,.55)" fontSize="12">
           {formatNumber(min)} {currency}
         </text>
       </svg>
@@ -432,23 +432,23 @@ export function PriceTemplate({ kind }: { kind: PriceKind }) {
                     <table style={{ width: '100%', borderCollapse: 'collapse' }}>
                       <thead>
                         <tr style={{ textAlign: 'left' }}>
-                          <th style={{ padding: 12, borderBottom: '1px solid rgba(255,255,255,.08)' }}>시간</th>
-                          <th style={{ padding: 12, borderBottom: '1px solid rgba(255,255,255,.08)' }}>시가</th>
-                          <th style={{ padding: 12, borderBottom: '1px solid rgba(255,255,255,.08)' }}>고가</th>
-                          <th style={{ padding: 12, borderBottom: '1px solid rgba(255,255,255,.08)' }}>저가</th>
-                          <th style={{ padding: 12, borderBottom: '1px solid rgba(255,255,255,.08)' }}>종가</th>
+                          <th style={{ padding: 12, borderBottom: '1px solid var(--border)' }}>시간</th>
+                          <th style={{ padding: 12, borderBottom: '1px solid var(--border)' }}>시가</th>
+                          <th style={{ padding: 12, borderBottom: '1px solid var(--border)' }}>고가</th>
+                          <th style={{ padding: 12, borderBottom: '1px solid var(--border)' }}>저가</th>
+                          <th style={{ padding: 12, borderBottom: '1px solid var(--border)' }}>종가</th>
                         </tr>
                       </thead>
                       <tbody>
                         {rows.map((r) => (
                           <tr key={r.t}>
-                            <td style={{ padding: 12, borderBottom: '1px solid rgba(255,255,255,.06)' }}>
+                            <td style={{ padding: 12, borderBottom: '1px solid var(--border)' }}>
                               <span className="muted">{formatTime(r.t)}</span>
                             </td>
-                            <td style={{ padding: 12, borderBottom: '1px solid rgba(255,255,255,.06)' }}>{formatNumber(r.open)}</td>
-                            <td style={{ padding: 12, borderBottom: '1px solid rgba(255,255,255,.06)' }}>{formatNumber(r.high)}</td>
-                            <td style={{ padding: 12, borderBottom: '1px solid rgba(255,255,255,.06)' }}>{formatNumber(r.low)}</td>
-                            <td style={{ padding: 12, borderBottom: '1px solid rgba(255,255,255,.06)' }}>{formatNumber(r.close)}</td>
+                            <td style={{ padding: 12, borderBottom: '1px solid var(--border)' }}>{formatNumber(r.open)}</td>
+                            <td style={{ padding: 12, borderBottom: '1px solid var(--border)' }}>{formatNumber(r.high)}</td>
+                            <td style={{ padding: 12, borderBottom: '1px solid var(--border)' }}>{formatNumber(r.low)}</td>
+                            <td style={{ padding: 12, borderBottom: '1px solid var(--border)' }}>{formatNumber(r.close)}</td>
                           </tr>
                         ))}
                       </tbody>

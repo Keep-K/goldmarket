@@ -79,9 +79,9 @@ export function ProductDetailTemplate({ id }: { id: string }) {
                 style={{
                   height: 320,
                   borderRadius: 14,
-                  border: '1px solid rgba(255,255,255,.08)',
+                  border: '1px solid var(--border)',
                   background:
-                    'radial-gradient(900px 260px at 20% 0%, rgba(214,177,94,.20), transparent 60%), radial-gradient(700px 240px at 90% 0%, rgba(111,177,255,.16), transparent 55%), rgba(255,255,255,.03)'
+                    'radial-gradient(900px 260px at 20% 0%, rgba(214,177,94,.20), transparent 60%), radial-gradient(700px 240px at 90% 0%, rgba(111,177,255,.16), transparent 55%), rgba(11,18,32,.02)'
                 }}
                 role="img"
                 aria-label={`이미지 슬롯: ${p.images[0]}`}
@@ -94,15 +94,15 @@ export function ProductDetailTemplate({ id }: { id: string }) {
               <div className="card__body">
                 <div className="card__title">스펙</div>
                 <div className="card__meta">간단 스펙 테이블</div>
-                <div style={{ overflowX: 'auto', border: '1px solid rgba(255,255,255,.08)', borderRadius: 14 }}>
+                <div style={{ overflowX: 'auto', border: '1px solid var(--border)', borderRadius: 14 }}>
                   <table style={{ width: '100%', borderCollapse: 'collapse' }}>
                     <tbody>
                       {Object.entries(p.specs).map(([k, v]) => (
                         <tr key={k}>
-                          <td style={{ padding: 12, borderBottom: '1px solid rgba(255,255,255,.06)', color: 'var(--muted)', width: 140 }}>
+                          <td style={{ padding: 12, borderBottom: '1px solid var(--border)', color: 'var(--muted)', width: 140 }}>
                             {k}
                           </td>
-                          <td style={{ padding: 12, borderBottom: '1px solid rgba(255,255,255,.06)' }}>{v}</td>
+                          <td style={{ padding: 12, borderBottom: '1px solid var(--border)' }}>{v}</td>
                         </tr>
                       ))}
                     </tbody>
@@ -172,9 +172,9 @@ export function ProductDetailTemplate({ id }: { id: string }) {
             style={{
               height: 420,
               borderRadius: 14,
-              border: '1px solid rgba(255,255,255,.10)',
+              border: '1px solid var(--border)',
               background:
-                'radial-gradient(900px 300px at 20% 0%, rgba(214,177,94,.22), transparent 60%), radial-gradient(700px 280px at 90% 0%, rgba(111,177,255,.18), transparent 55%), rgba(255,255,255,.03)'
+                'radial-gradient(900px 300px at 20% 0%, rgba(214,177,94,.22), transparent 60%), radial-gradient(700px 280px at 90% 0%, rgba(111,177,255,.18), transparent 55%), rgba(11,18,32,.02)'
             }}
             role="img"
             aria-label={`이미지 슬롯: ${p.images[0]}`}

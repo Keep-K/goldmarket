@@ -36,7 +36,7 @@ export function NoticeDetailPage() {
               <p className="card__meta">{new Date(query.data.publishedAt).toLocaleString('ko-KR')}</p>
               <div
                 style={{
-                  borderTop: '1px solid rgba(255,255,255,.08)',
+                  borderTop: '1px solid var(--border)',
                   paddingTop: 12,
                   color: 'var(--fg)'
                 }}

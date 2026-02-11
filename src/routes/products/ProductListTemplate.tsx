@@ -128,9 +128,9 @@ export function ProductListTemplate({ category }: { category?: string }) {
                         style={{
                           height: 150,
                           borderRadius: 14,
-                          border: '1px solid rgba(255,255,255,.08)',
+                          border: '1px solid var(--border)',
                           background:
-                            'radial-gradient(800px 220px at 20% 0%, rgba(214,177,94,.18), transparent 60%), radial-gradient(600px 200px at 90% 0%, rgba(111,177,255,.14), transparent 55%), rgba(255,255,255,.03)'
+                            'radial-gradient(800px 220px at 20% 0%, rgba(214,177,94,.18), transparent 60%), radial-gradient(600px 200px at 90% 0%, rgba(111,177,255,.14), transparent 55%), rgba(11,18,32,.02)'
                         }}
                         aria-label={`이미지 슬롯: ${p.images[0]}`}
                         role="img"

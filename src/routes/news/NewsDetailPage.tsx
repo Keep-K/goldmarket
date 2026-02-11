@@ -44,7 +44,7 @@ export function NewsDetailPage() {
                 <h3 className="card__title">{detailQuery.data.title}</h3>
                 <p className="card__meta">{new Date(detailQuery.data.publishedAt).toLocaleString('ko-KR')}</p>
                 <div
-                  style={{ borderTop: '1px solid rgba(255,255,255,.08)', paddingTop: 12 }}
+                  style={{ borderTop: '1px solid var(--border)', paddingTop: 12 }}
                   dangerouslySetInnerHTML={{ __html: detailQuery.data.contentHtml }}
                 />
                 <div className="card__actions" style={{ marginTop: 12 }}>

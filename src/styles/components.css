@@ -4,18 +4,21 @@
   position:sticky;
   top:0;
   z-index:1000;
-  background:rgba(11,15,20,.72);
+  background:rgba(255,255,255,.78);
   backdrop-filter:saturate(1.2) blur(14px);
-  border-bottom:1px solid rgba(255,255,255,.06);
+  border-bottom:1px solid var(--border);
+  transition:background .18s ease, box-shadow .18s ease, border-color .18s ease;
 }
-.header--compact .header__inner{padding:10px 0;}
+.header--compact{
+  background:rgba(255,255,255,.92);
+  box-shadow:0 10px 30px rgba(11,18,32,.08);
+}
 .header__inner{
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:14px;
   padding:16px 0;
-  transition:padding .18s ease;
 }
 .header__logo{
   display:flex;
@@ -33,7 +36,7 @@
 
 .header__nav{display:flex;gap:14px;align-items:center;flex-wrap:wrap;}
 .navlink{padding:8px 10px;border-radius:12px;color:var(--muted);}
-.navlink[aria-current="page"]{color:var(--fg);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);}
+.navlink[aria-current="page"]{color:var(--fg);background:rgba(11,18,32,.04);border:1px solid var(--border);}
 
 .header__actions{display:flex;gap:10px;align-items:center;}
 .header__burger{display:none;}
@@ -43,7 +46,7 @@
   .header__burger{display:inline-flex;}
 }
 
-.footer{border-top:1px solid rgba(255,255,255,.06);background:rgba(7,11,16,.7);}
+.footer{border-top:1px solid var(--border);background:rgba(255,255,255,.70);}
 .footer__inner{display:grid;grid-template-columns:2fr 1fr 1fr;gap:18px;padding:28px 0;}
 .footer__title{margin:0 0 10px 0;font-weight:700;letter-spacing:-.01em;}
 .footer__meta{margin:0;color:var(--muted);font-size:14px;line-height:1.6;}
@@ -54,7 +57,7 @@
   .footer__inner{grid-template-columns:1fr;}
 }
 
-.card{background:linear-gradient(180deg, rgba(16,24,38,.92), rgba(14,21,33,.92));border:1px solid var(--border);border-radius:var(--r-2);box-shadow:var(--shadow-1);overflow:hidden;}
+.card{background:linear-gradient(180deg, var(--card), var(--card-2));border:1px solid var(--border);border-radius:var(--r-2);box-shadow:var(--shadow-1);overflow:hidden;}
 .card__body{padding:16px;display:flex;flex-direction:column;gap:10px;}
 .card__title{margin:0;font-size:var(--fs-3);letter-spacing:-.01em;}
 .card__meta{margin:0;color:var(--muted);font-size:14px;}
@@ -74,11 +77,11 @@
 }
 .btn:active{transform:translateY(1px);}
 .btn--primary{background:linear-gradient(135deg, rgba(214,177,94,.95), rgba(214,177,94,.75));color:#111;border-color:transparent;}
-.btn--ghost{background:rgba(255,255,255,.04);}
+.btn--ghost{background:rgba(11,18,32,.04);}
 .btn--danger{background:rgba(255,90,106,.14);border-color:rgba(255,90,106,.25);}
 .btn--sm{padding:8px 10px;border-radius:11px;font-size:14px;}
 
-.badge{display:inline-flex;align-items:center;gap:8px;padding:4px 10px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid var(--border);font-size:12px;color:var(--muted);}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:4px 10px;border-radius:999px;background:rgba(11,18,32,.04);border:1px solid var(--border);font-size:12px;color:var(--muted);}
 
 .breadcrumb{display:flex;gap:8px;align-items:center;flex-wrap:wrap;color:var(--muted);font-size:14px;}
 .breadcrumb a{color:var(--muted);}
@@ -91,17 +94,17 @@
   padding:8px 10px;
   border-radius:999px;
   border:1px solid var(--border);
-  background:rgba(255,255,255,.04);
+  background:rgba(11,18,32,.03);
   color:var(--muted);
   cursor:pointer;
 }
-.tab[aria-selected="true"]{background:rgba(214,177,94,.16);border-color:rgba(214,177,94,.30);color:var(--fg);}
-.tabs__panel{padding:14px;border:1px solid var(--border);border-radius:var(--r-2);background:rgba(16,24,38,.55);}
+.tab[aria-selected="true"]{background:rgba(214,177,94,.20);border-color:rgba(214,177,94,.40);color:var(--fg);}
+.tabs__panel{padding:14px;border:1px solid var(--border);border-radius:var(--r-2);background:rgba(11,18,32,.03);}
 
 .modalOverlay{
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,.55);
+  background:rgba(11,18,32,.45);
   backdrop-filter: blur(10px);
   display:grid;
   place-items:center;
@@ -111,8 +114,8 @@
 .modal{
   width:min(720px, 100%);
   border-radius:18px;
-  background:linear-gradient(180deg, rgba(16,24,38,.96), rgba(14,21,33,.96));
-  border:1px solid rgba(255,255,255,.10);
+  background:linear-gradient(180deg, var(--card), var(--card-2));
+  border:1px solid var(--border);
   box-shadow:var(--shadow-2);
 }
 .modal__head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 14px 0 14px;}
@@ -124,16 +127,16 @@
   padding:12px 12px;
   border-radius:12px;
   border:1px solid var(--border);
-  background:rgba(255,255,255,.04);
+  background:rgba(11,18,32,.02);
   outline:none;
 }
 .input:focus{border-color:rgba(111,177,255,.35);}
 
-.skeleton{background:linear-gradient(90deg, rgba(255,255,255,.06), rgba(255,255,255,.10), rgba(255,255,255,.06));background-size:200% 100%;animation:skeleton 1.25s ease infinite;border-radius:12px;}
+.skeleton{background:linear-gradient(90deg, rgba(11,18,32,.06), rgba(11,18,32,.10), rgba(11,18,32,.06));background-size:200% 100%;animation:skeleton 1.25s ease infinite;border-radius:12px;}
 @keyframes skeleton{0%{background-position:0% 0;}100%{background-position:200% 0;}}
 
 .toastWrap{position:fixed;right:14px;bottom:14px;z-index:6000;display:flex;flex-direction:column;gap:10px;}
-.toast{min-width:260px;max-width:360px;padding:12px 12px;border-radius:14px;border:1px solid var(--border);background:rgba(16,24,38,.96);box-shadow:var(--shadow-2);}
+.toast{min-width:260px;max-width:360px;padding:12px 12px;border-radius:14px;border:1px solid var(--border);background:linear-gradient(180deg, var(--card), var(--card-2));box-shadow:var(--shadow-2);}
 .toast__title{margin:0 0 4px 0;font-weight:700;}
 .toast__desc{margin:0;color:var(--muted);font-size:14px;}
 
@@ -151,8 +154,8 @@
   gap:10px;
   padding:10px;
   border-radius:18px;
-  border:1px solid rgba(255,255,255,.10);
-  background:rgba(11,15,20,.72);
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.78);
   backdrop-filter:saturate(1.2) blur(14px);
 }
 @media (max-width:640px){
