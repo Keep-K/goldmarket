@@ -60,8 +60,7 @@ export function Header() {
     <header className={compact ? 'header header--compact' : 'header'}>
       <div className="container header__inner">
         <Link className="header__logo" to="/" aria-label="KoreaGoldX 홈">
-          <span className="header__logoMark" aria-hidden="true" />
-          <span className="header__logoText">KoreaGoldX</span>
+          <img className="header__logoImg" src="/logo/kge_logo.svg" alt="" decoding="async" />
         </Link>
 
         <nav className="header__nav" aria-label="Primary">
